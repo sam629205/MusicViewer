@@ -150,6 +150,10 @@ public class RanksActivity extends FragmentActivity{
 		}
 		@Override
 		protected void onPostExecute(RanksInfo result) {
+			if (result==null){
+				Toast.makeText(RanksActivity.this,"没有相关榜单数据",Toast.LENGTH_SHORT).show();
+				return;
+			}
 			urlList = result.getUrlList();
 			if (selectIndex!=selectIndex1) {
 				selectIndex = selectIndex1;

@@ -180,8 +180,8 @@ public List<ArtistInfo> parseWeb(String URL,int status) {
 			resultList.add(mInfo);
 		}
 	} catch (MalformedURLException e) {
-		// TODO Auto-generated catch block
 		e.printStackTrace();
+		return null;
 	} catch (IOException e) {
 		e.printStackTrace();
 	}  
@@ -315,6 +315,9 @@ public RanksInfo getRanks(String url){
 		info.setUrlList(infoList);
 	} catch (IOException e) {
 		e.printStackTrace();
+	}catch (NullPointerException e){
+		e.printStackTrace();
+		return null;
 	}
 	return info;
 }

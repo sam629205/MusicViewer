@@ -131,7 +131,7 @@ public class MainFragment extends Fragment {
 				waitBar.dismiss();
 				waitBar = null;
 			}
-			if (resultList.size()>0) {
+			if (resultList!=null&&resultList.size()>0) {
 			super.onPostExecute(resultList);
 			if (pageNum==1) {
 				adapter = new QueryAdapter(getActivity(),resultList);
